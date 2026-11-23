@@ -28,3 +28,6 @@ elif choice == "5":
 
 else:
     print("Invalid choice")
+
+print("DevTrack version 1.0")
+print("DevTrack version 1.0")
