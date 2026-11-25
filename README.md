@@ -4,4 +4,4 @@ User Management module completed.
 
 ## Project Module
 
-Project Management module is under development.
+Project Management module is under development..
