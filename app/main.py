@@ -1,33 +1,24 @@
 
-print("================================")
-print("       WELCOME TO DEVTRACK")
-print("================================")
+from fastapi import FastAPI
 
-print("1. Create Project")
-print("2. View Projects")
-print("3. Create Issue")
-print("4. View Issues")
-print("5. Exit")
+app = FastAPI(
+    title="DevTrack API",
+    description="Project and Issue Management System",
+    version="1.0.0"
+)
 
-choice = input("Enter your choice: ")
 
-if choice == "1":
-    print("Create Project module selected")
+@app.get("/")
+def home():
+    return {
+        "message": "Welcome to DevTrack API",
+        "status": "Running"
+    }
 
-elif choice == "2":
-    print("View Projects module selected")
 
-elif choice == "3":
-    print("Create Issue module selected")
-
-elif choice == "4":
-    print("View Issues module selected")
-
-elif choice == "5":
-    print("Thank you for using DevTrack")
-
-else:
-    print("Invalid choice")
-
-print("DevTrack version 1.0")
-print("DevTrack version 1.0")
+@app.get("/health")
+def health_check():
+    return {
+        "status": "Healthy",
+        "application": "DevTrack"
+    }
